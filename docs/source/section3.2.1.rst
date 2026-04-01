@@ -45,7 +45,7 @@ Unless they are specified, the current specialist who adds the command is defaul
 as the owner of the added check record, and the current path is defaulted as the
 working directory when the command is executed later.
 
-Specified addtional PBS batch options via :ref:`Info option <section5>` :ref:`-QS <QS>` (-QSubOptions) to add a check;
+Specify additional PBS batch options via :ref:`Info option <section5>` :ref:`-QS <QS>` (-QsubOptions) to add a check;
 and specify a parent check index to put the current command on hold until the parent
 check is finished.
 
@@ -57,7 +57,7 @@ A simple shell script can be used to wrap a complicated command.
 
 **EXAMPLE 3. To list file names in the current directory with name containing 'test' by catching the standard output into a log and display it on screen:**
 
-dsheck AC :ref:`-CM <CM>` test1.sh :ref:`-HN <HN>` PBS
+| **dscheck** :ref:`-AC <AC>` :ref:`-CM <CM>` test1.sh :ref:`-HN <HN>` PBS
 
 Content of shell script test1.sh:
 
@@ -70,7 +70,7 @@ Content of shell script test1.sh:
 
 **EXAMPLE 4. To list file names in the current directory with name containing 'test' by catching the standard output and error into separate log files:**
 
-dsheck AC :ref:`-CM <CM>` test2.sh :ref:`-HN <HN>` PBS
+| **dscheck** :ref:`-AC <AC>` :ref:`-CM <CM>` test2.sh :ref:`-HN <HN>` PBS
 
 Content of shell script test2.sh:
 
@@ -81,9 +81,9 @@ Content of shell script test2.sh:
 
 .. _3.2.1_e5:
 
-**EXAMPLE 5. To add testing command 'test3' into 'dscheck' for delayed mode execution on PBS:**
+**EXAMPLE 5. To add testing command 'test2' into 'dscheck' for delayed mode execution on PBS:**
 
-dsheck AC :ref:`-CM <CM>` test3 :ref:`-HN <HN>` PBS
+| **dscheck** :ref:`-AC <AC>` :ref:`-CM <CM>` test3 :ref:`-HN <HN>` PBS
 
 The command 'test3' must be executable at the current working directory on PBS machines.
 

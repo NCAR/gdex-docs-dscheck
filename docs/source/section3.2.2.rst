@@ -10,7 +10,7 @@
 Action Option -**GC** (-**GetCheck**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-gets check information recorded in RDADB.
+gets check information recorded in GDEXDB.
 
 | **dscheck** -(GC|GetCheck) [:ref:`Mode Options <mode3.2.2>`]
 |           [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
@@ -42,7 +42,7 @@ gets check information recorded in RDADB.
      - format the column output with a fix width for all values of a given field
 
 Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify what check fields to retrieve.
-It defaults to "COVTUFJDNW" if :ref:`-FN <FN>` is not given.
+It defaults to "COVTUPFJDNW" if :ref:`-FN <FN>` is not given.
 
 Valid check field names and their corresponding :ref:`Info options <section5>`:
 
@@ -73,10 +73,10 @@ Valid check field names and their corresponding :ref:`Info options <section5>`:
      - check status for a recorded command
    * - B
      - :ref:`-(DF|DownFlags) <DF>`
-     - Storage system down flags: H-HPSS,D-DRDATA,G-GLADE,O-ObjectStore
+     - Storage system down flags: D-DRDATA,G-GLADE,O-ObjectStore
    * - P
      - :ref:`-(PQ|PBSQueue) <PQ>`
-     - PBS batch queue name: rda or htc
+     - PBS batch queue name: gdex or htc
    * - R
      - :ref:`-(PI|ParentIndex) <PI>`
      - parent check index the current one to wait on
@@ -94,7 +94,7 @@ Valid check field names and their corresponding :ref:`Info options <section5>`:
      - upper limit for number of command tries
    * - Z
      - :ref:`-(SZ|DataSize) <SZ>`
-     - total tytes of data processed for the command
+     - total bytes of data processed for the command
    * - D
      - :ref:`-(CD|CheckDate) <CD>`
      - date the command is initially recorded
@@ -115,7 +115,7 @@ Valid check field names and their corresponding :ref:`Info options <section5>`:
      - include modules to load to batch job script
    * - I
      - :ref:`-(EV|Environments) <EV>`
-     - include environment vairables to load to batch job script
+     - include environment variables to load to batch job script
    * - Q
      - :ref:`-(QS|QsubOptions) <QS>`
      - additional PBS batch options for qsub

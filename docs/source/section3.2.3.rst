@@ -10,7 +10,7 @@
 Action Option -**DL** (-**Delete**) (Aliases: -**RM**, -**Remove**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-deletes one or multiple 'dscheck' records from RDADB
+deletes one or multiple 'dscheck' records from GDEXDB
 for given check indices.
 
 | **dscheck** -(DL|Delete)

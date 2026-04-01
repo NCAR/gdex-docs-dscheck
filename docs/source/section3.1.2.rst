@@ -62,7 +62,7 @@ names:
      - computer hostname
    * - M
      - :ref:`-(MH|MatchHost) <MH>`
-     - Flage to control hostname match
+     - Flags to control hostname match
    * - S
      - :ref:`-(SN|Specialist) <SN>`
      - DECS specialist the daemon set for

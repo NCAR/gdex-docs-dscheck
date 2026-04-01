@@ -16,7 +16,7 @@ categories:
    :header-rows: 0
 
    * - :ref:`Daemon Control Actions <section3.1>`
-     - create, delete, modify and view daemon control information in RDADB, of specified specialist, command and hostname
+     - create, delete, modify and view daemon control information in GDEXDB, of specified specialist, command and hostname
    * - :ref:`Check Actions <section3.2>`
      - add, delete, unlock and view check information of the active individual checks
    * - :ref:`Check Process Actions <section3.3>`

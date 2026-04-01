@@ -38,19 +38,19 @@ non-daemon modes. Check indices can be specified if in non-daemon mode.
    * - :ref:`-(NC|NoCommand) <NC>`
      - does not issue remote commands if this :ref:`Mode option <section4>` is present
    * - :ref:`-(WU|WithdsUpdt) <WU>`
-     - in non-daemon mode, add check records for due `dsupdt <https://gdex-docs-dsupdt.readthedocs.io/en/latest/index.html>`_ actions configured in update control records
+     - in non-daemon mode, add check records for due `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ actions configured in update control records
    * - :ref:`-(WR|WithdsRqst) <WR>`
-     - in non-daemon mode, add check records for `dsrqst <https://gdex-docs-dsrqst.readthedocs.io/en/latest/index.html>`_ records due to be built or purged
+     - in non-daemon mode, add check records for `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ records due to be built or purged
 
 In daemon mode, 'dscheck' sleeps two minutes (120 seconds as default), unless
 provided  differently per option :ref:`-WI <WI>` (-WaitInterval), between processing check
 records. Every time it wakes up, 'dscheck' first tries to add the due update
-controls for command `dsupdt <https://gdex-docs-dsupdt.readthedocs.io/en/latest/index.html>`_ and add requests due to be built or purged for
-command `dsrqst <https://gdex-docs-dsrqst.readthedocs.io/en/latest/index.html>`_, and then starts, or restarts, commands recorded in check
+controls for command `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ and add requests due to be built or purged for
+command `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_, and then starts, or restarts, commands recorded in check
 records on a computer according the priorities configured in the daemon controls.
 
 In non-daemon mode, :ref:`Mode options <section4>` :ref:`-WU <WU>` and :ref:`-WR <WR>` must be present for due actions
-of `dsupdt <https://gdex-docs-dsupdt.readthedocs.io/en/latest/index.html>`_ and `dsrqst <https://gdex-docs-dsrqst.readthedocs.io/en/latest/index.html>`_ to be added to check records. All current standing
+of `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ and `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ to be added to check records. All current standing
 check records, unless check indices are specified, are processed on machines
 according to the configured information in daemon controls.
 

@@ -61,7 +61,7 @@ the check date of the recorded command is first processed.
 Info Option -**CI** (-**CheckIndex**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-check record indices for commands recorded in RDADB. A check
+check record indices for commands recorded in GDEXDB. A check
 record is automatically purged if the command is finished.
 
 
@@ -92,8 +92,8 @@ log file name. The debug level is mandatory for this option. It can be a
 single integer value, for example, 1000 means to log debug messages for debug
 levels 1 to 1000; or a range of values, for example, 200-1000 means to log
 debug messages from debug levels 200 to 1000. The default debug file path is
-'$DSSHOME}/dssdb/log' and the default debug file name is 'mydss.dbg'. Provides
-the second and third values for this option to override the default ones
+'${DSSHOME}/dssdb/log' and the default debug file name is 'mydss.dbg'. Provide
+the second and third values for this option to override the defaults
 respectively.
 
 
@@ -115,7 +115,7 @@ storage system down flags. The current supported flags are:
 .. list-table::
    :widths: auto
    :header-rows: 1
- H-HPSS, D-DRDATA, G-GLADE, O-ObjectStore. It can hold multiple flags, up to 5, for all down storage systems.
+ D-DRDATA, G-GLADE, O-ObjectStore. It can hold multiple flags, up to 5, for all down storage systems.
 
 
 .. _DI:
@@ -151,7 +151,7 @@ Info Option -**EV** (-**Environments**) (Alias: -**Envs**) :
 
 (Alias: -Envs), specifies environment variables, in form of
 VarName=VarValue and separated by ',', needed to be set to execute a command as
-a batch job. The environment varaibles will be set in the batch starting script.
+a batch job. The environment variables will be set in the batch starting script.
 
 
 .. _FC:
@@ -188,7 +188,7 @@ Different setting sign of :ref:`Action <section3>` and :ref:`Mode options <secti
 option -AO (-ActOption, default to <!>); and different equal sign of single
 value assignment can be provided by Info option :ref:`-ES <ES>`, (-EqualSign, default to
 '<=>'). Multi-value assignments can be given in columns delimited with
-separator specified per option -SP (-Separator, default to '<:>'). It starts
+separator specified per option -DV (-Divider, default to '<:>'). It starts
 with a column title line for multi-value option names and the rest holds
 values corresponding to each column titles. The value information stops at
 the end of the file or when a new column name line or another single value
@@ -202,8 +202,8 @@ title line to end lines properly.
 Info Option -**MC** (-**MaxCount**) (Aliases: -**MaximumCount**, -**MaxTryCount**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the maximum number of tries for a check command can be processed
-if the command is failed.
+the maximum number of tries a check command can be processed
+if the command has failed.
 
 
 .. _MH:
@@ -212,7 +212,7 @@ Info Option -**MH** (-**MatchHost**) (Alias: -**MatchHostname**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 flag to control hostname match.
-'G' - general match, including emty hostname specified, or exclusive hostnames
+'G' - general match, including empty hostname specified, or exclusive hostnames
 given but the hostname is not in the list, and 'M' - match only the hostname
 specified is identical to the current host.
 
@@ -269,7 +269,7 @@ Info Option -**QS** (-**QSubOptions**) (Alias: -**PBSOptions**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (Alias: -PBSOptions), specifies options to execute a command
-as a batch job via qsub on PBS nodes. The qsub options must be quoted when prsented
+as a batch job via qsub on PBS nodes. The qsub options must be quoted when presented
 on command line, such as, :ref:`-QS <QS>` '-l walltime=12:00:00'.
 
 
@@ -297,7 +297,7 @@ progress percentage if under process and error message for a failed command.
 Info Option -**SZ** (-**DataSize**) (Aliases: -**Size**, -**ProcSize**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the total bytes of data is processed for the check record.
+the total bytes of data processed for the check record.
 
 
 .. _TC:
