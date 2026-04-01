@@ -14,7 +14,7 @@ Mode Option -**AW** (-**AnyWhere**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 for :ref:`Action <section3>` :ref:`-AC <AC>` (-AddCheck), sets Working directory empty in
-cehck record to start processing the check anywhere.
+check record to start processing the check anywhere.
 
 
 .. _BG:
@@ -22,8 +22,8 @@ cehck record to start processing the check anywhere.
 Mode Option -**BG** (-**BackGround**) (Alias: -**b**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-background process. When it presents
-screen display is turned off for both standard outputs and errors. :ref:`-(CP|CheckPending) <CP>` - Check and kill long pending checks
+background process. When it is present,
+screen display is turned off for both standard output and errors.
 
 
 .. _CP:
@@ -31,8 +31,8 @@ screen display is turned off for both standard outputs and errors. :ref:`-(CP|Ch
 Mode Option -**CP** (-**CheckPending**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-if present for :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck), check and kill
-long pending checks
+if present for :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck), checks and kills
+long pending checks.
 
 
 .. _CS:
@@ -76,7 +76,7 @@ not present.
 
 .. _MD:
 
-Mode Option -**MD** (-**PgDataset**) :
+Mode Option -**MD** (-**MyDataset**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 allows a specialist to manipulate check information of
@@ -89,7 +89,7 @@ Mode Option -**NC** (-**NoCommand**) (Alias: -**NoRemoteCommand**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 does not issue remote commands if
-this Mode option is present for action :ref:`-PC <PC>` (-Processcheck).
+this Mode option is present for action :ref:`-PC <PC>` (-ProcessCheck).
 
 
 .. _ND:
@@ -117,7 +117,7 @@ speed up reading input file(s).
 Mode Option -**WR** (-**WithdsRqst**) (Alias: -**WithRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-adds requests due to be built or purged of command `dsrqst <https://gdex-docs-dsrqst.readthedocs.io/en/latest/index.html>`_
+adds requests due to be built or purged of command `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_
 for 'dscheck' :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) in non-daemon mode.
 
 
@@ -126,7 +126,7 @@ for 'dscheck' :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) in non-da
 Mode Option -**WU** (-**WithdsUpdt**) (Alias: -**WithUpdate**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-adds due update controls of command `dsrqst <https://gdex-docs-dsrqst.readthedocs.io/en/latest/index.html>`_ for 'dscheck'
+adds due update controls of command `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ for 'dscheck'
 :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) in non-daemon mode.
 
 

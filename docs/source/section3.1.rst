@@ -6,11 +6,11 @@
 
 A daemon control record for a command, a specialist and a hostname is used to
 configure how many concurrent processes the specified command can be executed
-for the specialist on specified hostname, and the priority the the hostname is
+for the specialist on specified hostname, and the priority the hostname is
 picked to start the command. A running centralized daemon reads this record
 periodically in case the configuration is changed while the daemon is still
 running, so that specialists can reset the values in daemon control records to
-change the behave of dscheck daemon dynamically without shutting the daemon down.
+change the behavior of dscheck daemon dynamically without shutting the daemon down.
 
 Daemon control information can be created, modified and viewed via Actions
 included in this section:

@@ -63,7 +63,7 @@ PBS to process batch jobs.
 Info Option -**MT** (-**MaxrunTime**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-specify the maxmum run time for deamon mode. It defaults to 0
+specify the maximum run time for daemon mode. It defaults to 0
 for unlimit time. For examples, 5000 means seconds, and 1D means 1 day for 86400
 seconds.
 

@@ -11,7 +11,7 @@
 Quotes [] indicate optional. A pipeline '|' in parentheses as in format (A|B)
 means either A or B can be used. The options applied to 'dscheck' are divided
 into three categories, :ref:`Action <section3>`, :ref:`Mode <section4>`, and Information (:ref:`Info <section5>` for short) options.
-:ref:`Action options <section3>` are used to specify what tasks this utility program to execute,
+:ref:`Action options <section3>` are used to specify what task this utility program is to execute,
 :ref:`Mode options <section4>` are used to modify behaviors of the actions, and the :ref:`Info <section5>` options
 are used to pass information, one or multiple values, to run 'dscheck'. An option
 can be given in form of either short name or long name, :ref:`-DS <DS>` or -Dataset for
@@ -26,18 +26,18 @@ and certain :ref:`Mode options <section4>` can be applied to alter the behaviors
 
 All options, except :ref:`Info option <section5>` :ref:`-IF <IF>` (-InputFile), can be given either on command
 line or in input files. Input file names are presented per :ref:`Info option <section5>` :ref:`-IF <IF>` and
-can only be provided on command line. Referring to description of :ref:`Info option <section5>` :ref:`-IF <IF>`
-(-InputFile) for detail on how to present options in input files.  One or multiple
+can only be provided on command line. Refer to the description of :ref:`Info option <section5>` :ref:`-IF <IF>`
+(-InputFile) for details on how to present options in input files.  One or multiple
 input files, combined with options on command line, are allowed to run 'dscheck'.
 The option name, :ref:`-IF <IF>` (-InputFile), itself can be omitted if a single input file is
 given on command line and all other option information are provided inside the
 input file.
 
 When information of daemons and checks are retrieved, :ref:`Info options <section5>` are used to
-specify conditions for querying information from RDADB. Some special signs can be
+specify conditions for querying information from GDEXDB. Some special signs can be
 used to further confine the information with special and complicated conditions;
 they are '!', '<', '>' and '<>'.  These special signs, if provided on command
-line,  must be quoted or escaped to avoid of being interpreted by Unix OS system.
+line,  must be quoted or escaped to avoid being interpreted by the Unix shell.
 The '!', or \!, means exclusion to the following value(s) and it must be the
 first item following an :ref:`Info option <section5>` name, while '<' or '>' mean greater or less
 than the following value and '<>' means between the following two values.
@@ -51,8 +51,8 @@ command line as
 
 A description is displayed for an option given either before or after -(h|help).
 If no option is specified or 'dscheck' is issued by itself, this whole document
-is displayed per UNIX utility 'more'. A hard copy of this help document can be
-printed from the saved file: ${DSSHOME}/dssdb/prog_usage/dscheck.usg.
+is displayed via UNIX utility 'more'. A hard copy of this help document can be
+printed from the saved file, dscheck.usg, under python package rda_python_dscheck.
 
 
 

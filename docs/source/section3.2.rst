@@ -4,8 +4,8 @@
 3.2 - Check Actions
 =================================
 
-Delayed mode command executions for due actions of `dsupdt <https://gdex-docs-dsupdt.readthedocs.io/en/latest/index.html>`_ and `dsrqst <https://gdex-docs-dsrqst.readthedocs.io/en/latest/index.html>`_ are
-recorded automatically, while other commands, including `dsarch <https://gdex-docs-dsarch.readthedocs.io/en/latest/index.html>`_ and specialist-
+Delayed mode command executions for due actions of `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ and `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ are
+recorded automatically, while other commands, including `dsarch <https://gdex-docs-dsarch.readthedocs.io>`_ and specialist-
 defined ones, can be manually added into 'dscheck'. Command information can be
 added, viewed and manipulated via 'dscheck' actions:
 
