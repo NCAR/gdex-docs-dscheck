@@ -14,7 +14,7 @@ retrieves daemon control information for given commands,
 specialists or hostnames. Daemon control information of specified specialists
 are retrieved if the specialist login names are provided. Without specified
 condition, only the daemon control records set for the specialist who runs
-'dscheck' are retrieved.
+**dscheck** are retrieved.
 
 | **dscheck** -(GD|GetDaemon) [:ref:`Mode Option <mode3.1.2>`]
 |           [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
@@ -77,7 +77,7 @@ Daemon control information can be retrieved for specified specialist per option
 :ref:`-SN <SN>` (-Specialist), and/or other conditions. :ref:`Info option <section5>` :ref:`-SN <SN>`, :ref:`-CM <CM>` and :ref:`-HN <HN>` accept
 wildcard input of '%' for matching any number of characters.
 
-If daemon control index is not given, 'dscheck' gathers only the daemon control
+If daemon control index is not given, **dscheck** gathers only the daemon control
 records owned by the specialist who executes this getting daemon control Action.
 To view daemon control records owned by another specialist, you need specify :ref:`Info <section5>`
 option :ref:`-SN <SN>` (-Specialist). To view all control records, you simply provide option

@@ -69,7 +69,7 @@ given field.
 Mode Option -**LO** (-**LogOn**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-turns detail logging on when 'dscheck' starts
+turns detail logging on when **dscheck** starts
 in Daemon mode. The detail logging is off as default if this Mode option is
 not present.
 
@@ -99,7 +99,7 @@ Mode Option -**ND** (-**NewDaemon**) :
 
 a new daemon control can only be added when this Mode option is
 present and daemon control index is given as 0 when :ref:`Action <section3>` :ref:`-SD <SD>` (-SetDaemon) of
-'dscheck' is executed. This Mode option blocks mistakes of adding daemon control
+**dscheck** is executed. This Mode option blocks mistakes of adding daemon control
 records unintentionally.
 
 
@@ -118,7 +118,7 @@ Mode Option -**WR** (-**WithdsRqst**) (Alias: -**WithRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 adds requests due to be built or purged of command `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_
-for 'dscheck' :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) in non-daemon mode.
+for **dscheck** :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) in non-daemon mode.
 
 
 .. _WU:
@@ -126,7 +126,7 @@ for 'dscheck' :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) in non-da
 Mode Option -**WU** (-**WithdsUpdt**) (Alias: -**WithUpdate**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-adds due update controls of command `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ for 'dscheck'
+adds due update controls of command `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ for **dscheck**
 :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) in non-daemon mode.
 
 
