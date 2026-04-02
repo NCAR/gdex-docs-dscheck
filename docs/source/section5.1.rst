@@ -15,7 +15,7 @@ Info Option -**DM** (-**DaemonMode**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 passes daemon mode values, start, stop, logon or logoff
-to 'dscheck' :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) to start, to stop, to log detail or
+to **dscheck** :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) to start, to stop, to log detail or
 not to log detail, correspondingly.
 
 
@@ -102,7 +102,7 @@ Info Option -**WI** (-**WaitInterval**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 defaults to 2 minutes (120 seconds). It is used as a time
-intervals for the 'dscheck' daemon to sleep between processing check records.
+intervals for the **dscheck** daemon to sleep between processing check records.
 
 
 

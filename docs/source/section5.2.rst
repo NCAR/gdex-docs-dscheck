@@ -5,7 +5,7 @@
 =================================
 
 A multi-value Info option is used to pass multiple values for one Info option
-into 'dscheck'. At lease one value must follow each multi-value option.
+into **dscheck**. At lease one value must follow each multi-value option.
 
 
 .. _AN:
@@ -178,7 +178,7 @@ Info Option -**IF** (-**InputFile**) :
 for input file names; one or multiple file names may be
 given on command line. Input files are used to hold all valid options and
 the associated values of Info options that need to be passed in for
-execution of 'dscheck'.
+execution of **dscheck**.
 
 In a input file, lines start with sign '#' are considered as comments;
 Option Names can be given either short, long or alias names. :ref:`Action <section3>` and :ref:`Mode <section4>`
@@ -242,7 +242,7 @@ Info Option -**PO** (-**Priority**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 specifies the priority of a given host so that the host is
-picked in such an order to start a 'dscheck' process.
+picked in such an order to start a **dscheck** process.
 
 
 .. _PL:

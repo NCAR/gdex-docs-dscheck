@@ -4,15 +4,15 @@
 1 - INTRODUCTION
 =================================
 
-Program 'dscheck' is a utility to add, remove, view and process recorded commands
+Program **dscheck** is a utility to add, remove, view and process recorded commands
 of other utility programs in Research Data Archive Management System (GDEXMS). For
 delayed execution, or called batch process, of utility programs, `dsarch <https://gdex-docs-dsarch.readthedocs.io>`_, `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_
 and `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_, the commands information and the directories where the commands are
 initiated are saved into GDEXDB as check records. For any other specialist-defined
 commands, they can be also put in delayed mode if the commands are added to
-'dscheck' control via :ref:`Action <section3>` :ref:`-AC <AC>` (-AddCheck).
+**dscheck** control via :ref:`Action <section3>` :ref:`-AC <AC>` (-AddCheck).
 
-The check records are processed automatically via a centralized 'dscheck' daemon,
+The check records are processed automatically via a centralized **dscheck** daemon,
 although they can be processed manually on command line. During the execution of a
 recorded command, the check record is locked in GDEXDB to prevent multiple executions
 of the same command. The check records that retain command information are
@@ -27,9 +27,9 @@ try limits allowed. Utility programs `dsrqst <https://gdex-docs-dsrqst.readthedo
 recovering ability and they do not need check-reprocessing.
 
 The purged check records are retained in GDEXDB. The check history can be viewed via
-utility program 'viewcheckusage'.
+utility program **viewcheckusage**.
 
-Program 'dscheck' supports the following major functions:
+Program **dscheck** supports the following major functions:
 
 * Set daemon control records for individual specialists to configure how many concurrent processes of a specified command can be executed on a given host, and the host priorities to define the order of which host is picked for processing a check. Without the daemon control information, a recorded command will not be started automatically.
 * ADD a check record for delayed command execution of any specialist-defined commands
@@ -41,11 +41,11 @@ Program 'dscheck' supports the following major functions:
 * Add the due `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ and `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ actions into dscheck records
 * Process commands that have been recorded into GDEXDB or the ones that have failed previously.
 
-The specialist who executes a utility command under 'dscheck' control remains
+The specialist who executes a utility command under **dscheck** control remains
 the exclusive owner of the check record in GDEXDB. This prevents the command from being
 processed or deleted accidentally by other specialists.
 
-In the following sections, general usages of 'dscheck' are described first; and
+In the following sections, general usages of **dscheck** are described first; and
 detail descriptions of :ref:`Action options <section3>` are given; and finally :ref:`Mode <section4>` and :ref:`Info <section5>`
 options are explained.
 

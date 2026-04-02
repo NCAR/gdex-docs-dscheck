@@ -42,9 +42,9 @@ non-daemon modes. Check indices can be specified if in non-daemon mode.
    * - :ref:`-(WR|WithdsRqst) <WR>`
      - in non-daemon mode, add check records for `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ records due to be built or purged
 
-In daemon mode, 'dscheck' sleeps two minutes (120 seconds as default), unless
+In daemon mode, **dscheck** sleeps two minutes (120 seconds as default), unless
 provided  differently per option :ref:`-WI <WI>` (-WaitInterval), between processing check
-records. Every time it wakes up, 'dscheck' first tries to add the due update
+records. Every time it wakes up, **dscheck** first tries to add the due update
 controls for command `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ and add requests due to be built or purged for
 command `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_, and then starts, or restarts, commands recorded in check
 records on a computer according the priorities configured in the daemon controls.

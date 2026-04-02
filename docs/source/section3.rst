@@ -4,7 +4,7 @@
 3 - ACTION OPTIONS
 =================================
 
-Action options are used to specify what task 'dscheck' executes. No values
+Action options are used to specify what task **dscheck** executes. No values
 are allowed to follow Action options. Multiple Action options provided
 simultaneously are blocked.
 

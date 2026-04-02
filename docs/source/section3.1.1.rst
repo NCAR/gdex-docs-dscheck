@@ -42,7 +42,7 @@ is present. Combination of specialist login name, command name and hostname of
 computer must be unique for each daemon control record.
 
 Specify host name 'PBS' for putting the command in the PBS batch control system. If
-a specified command name is not found in the daemon control, the general 'dscheck'
+a specified command name is not found in the daemon control, the general **dscheck**
 configuration for command name 'ALL' is used.
 
 
