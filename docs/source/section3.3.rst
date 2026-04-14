@@ -4,23 +4,23 @@
 3.3 - Check Process Actions
 =================================
 
-Delayed mode command executions recorded in GDEXDB are automatically started,
-or restarted, by the common **dscheck** daemon. Running commands can be interrupted
-at any time and the child processed of the interrupted commands are also cleaned up.
-The status of the current check records can be gathered and emailed to a specialist.
+Deferred commands recorded in GDEXDB are started (or restarted) automatically
+by the centralized **dscheck** daemon. Running commands can be interrupted at any
+time, and all child processes of the interrupted command are also cleaned up.
+The current check status can be gathered and emailed to a specialist.
 
-Here are the actions for process checks:
+Available actions:
 
 .. list-table::
    :widths: auto
    :header-rows: 0
 
    * - :ref:`Process Check <section3.3.1>`
-     - start a command from its information recorded in **dscheck**
+     - start a command from its check record, in daemon or non-daemon mode
    * - :ref:`Interrupt Check <section3.3.2>`
-     - interrupt a running command for given check record and clean the child processes
+     - interrupt a running command for a given check record and kill all its child processes
    * - :ref:`Email Check <section3.3.3>`
-     - email a specialist for the status of the current check records
+     - email a specialist the current status of their check records
 
 .. toctree::
    :maxdepth: 1

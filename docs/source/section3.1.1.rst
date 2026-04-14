@@ -10,10 +10,9 @@
 Action Option -**SD** (-**SetDaemon**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-creates and modifies daemon control information into
-GDEXDB for given specialist login names, commands, and hostnames of computers on
-which the check commands are processed. One or multiple records can be set each
-time.
+creates or modifies daemon control records in GDEXDB for
+given specialist login names, commands, and hostnames. One or more records
+can be set per execution.
 
 | **dscheck** -(SD|SetDaemon) [:ref:`Mode Option <mode3.1.1>`]
 |           [:ref:`-(DI|DaemonIndex) <DI>` controlIndices]
@@ -24,31 +23,29 @@ time.
 |           [:ref:`-(PL|ProcessLimit) <PL>` MaxNumberOfProcesses],
 |           [:ref:`-(PO|Priority) <PO>` HostListOrder]
 
-.. _mode3.1.1:
-
-:ref:`Mode option <section4>` that can be specified for this action include:
+Available mode option:
 
 .. list-table::
    :widths: auto
    :header-rows: 0
 
    * - :ref:`-(ND|NewDaemon) <ND>`
-     - sets a new daemon control record into GDEXDB
+     - adds a new daemon control record to GDEXDB
 
-If information of a daemon control exists already in GDEXDB for a given specialist,
-a command and a hostname, the daemon control record is modified; otherwise, a new
-daemon control record is added if daemon index is 0 and :ref:`Mode option <section4>` :ref:`-ND <ND>` (-NewDaemon)
-is present. Combination of specialist login name, command name and hostname of
-computer must be unique for each daemon control record.
+If a daemon control record already exists in GDEXDB for the given specialist,
+command, and hostname, the record is updated. A new record is created when the
+daemon index is 0 and :ref:`Mode option <section4>` :ref:`-ND <ND>` (-NewDaemon) is present. The combination
+of specialist login name, command name, and hostname must be unique for each
+daemon control record.
 
-Specify host name 'PBS' for putting the command in the PBS batch control system. If
-a specified command name is not found in the daemon control, the general **dscheck**
-configuration for command name 'ALL' is used.
+Specify hostname 'PBS' to submit the command to the PBS batch control system.
+If the specified command name is not found in the daemon control, the general
+'ALL' configuration is used.
 
 
 .. _3.1.1_e1:
 
-**EXAMPLE 1. Set daemon control information for schuster, all commands on PBS hosts, for maximum 4 checks can be processed at the same time with priority 1, the smaller the number the higher the priority is, via input file daemon.ctl:**
+**EXAMPLE 1. To set daemon control for schuster on PBS hosts for all commands, allowing up to 4 concurrent checks at priority 1 (lower number = higher priority), using input file daemon.ctl:**
 
 | **dscheck** :ref:`-SD <SD>` :ref:`-ND <ND>` :ref:`-IF <IF>` daemon.ctl
 

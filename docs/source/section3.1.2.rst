@@ -10,11 +10,9 @@
 Action Option -**GD** (-**GetDaemon**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-retrieves daemon control information for given commands,
-specialists or hostnames. Daemon control information of specified specialists
-are retrieved if the specialist login names are provided. Without specified
-condition, only the daemon control records set for the specialist who runs
-**dscheck** are retrieved.
+retrieves daemon control records for specified commands,
+specialists, or hostnames. If no conditions are provided, only records owned
+by the specialist running **dscheck** are returned.
 
 | **dscheck** -(GD|GetDaemon) [:ref:`Mode Option <mode3.1.2>`]
 |           [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
@@ -27,22 +25,19 @@ condition, only the daemon control records set for the specialist who runs
 |           [:ref:`-(OF|OutputFile) <OF>` OutputFileName]
 |           [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.1.2:
-
-:ref:`Mode option <section4>` that can be specified for getting check control Action:
+Available mode option:
 
 .. list-table::
    :widths: auto
    :header-rows: 0
 
    * - :ref:`-(FO|FormatOutput) <FO>`
-     - format the column output with a fix width for all values of a given field
+     - formats each column to a uniform fixed width
 
-Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify what daemon control fields to be
-retrieved. It defaults to all available fields if option :ref:`-FN <FN>` is not provided.
+Use :ref:`-FN <FN>` (-FieldNames) to specify which daemon control fields to retrieve.
+Defaults to all available fields when :ref:`-FN <FN>` is not provided.
 
-Valid field names of daemon controls and their corresponding :ref:`Info <section5>` option
-names:
+Valid daemon control field names and their corresponding :ref:`Info options <section5>`:
 
 .. list-table::
    :widths: auto
@@ -73,20 +68,16 @@ names:
      - :ref:`-(PO|Priority) <PO>`
      - host priority a specified command to start on
 
-Daemon control information can be retrieved for specified specialist per option
-:ref:`-SN <SN>` (-Specialist), and/or other conditions. :ref:`Info option <section5>` :ref:`-SN <SN>`, :ref:`-CM <CM>` and :ref:`-HN <HN>` accept
-wildcard input of '%' for matching any number of characters.
+Results can be filtered by specialist (:ref:`-SN <SN>`), and/or other conditions.
+Options :ref:`-SN <SN>`, :ref:`-CM <CM>`, and :ref:`-HN <HN>` accept the '%' wildcard.
 
-If daemon control index is not given, **dscheck** gathers only the daemon control
-records owned by the specialist who executes this getting daemon control Action.
-To view daemon control records owned by another specialist, you need specify :ref:`Info <section5>`
-option :ref:`-SN <SN>` (-Specialist). To view all control records, you simply provide option
-:ref:`-SN <SN>` with value of 'ALL'.
+To view records owned by another specialist, provide their login name via
+:ref:`-SN <SN>` (-Specialist). To view all control records, use :ref:`-SN <SN>` ALL.
 
 
 .. _3.1.2_e2:
 
-**EXAMPLE 2. To get all daemon control information currently set for you:**
+**EXAMPLE 2. To retrieve all daemon control records set for you:**
 
 dscheck GD
 

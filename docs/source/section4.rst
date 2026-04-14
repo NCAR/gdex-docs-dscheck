@@ -4,8 +4,8 @@
 4 - MODE OPTIONS
 =================================
 
-Use proper Mode options to modify behaviors of :ref:`Action options <section3>`. Mode options
-are all optional. No value is allowed to be passed in following any Mode option.
+Mode options modify the behavior of :ref:`Action options <section3>`. They are all optional and
+take no values.
 
 
 .. _AW:
@@ -13,8 +13,8 @@ are all optional. No value is allowed to be passed in following any Mode option.
 Mode Option -**AW** (-**AnyWhere**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-for :ref:`Action <section3>` :ref:`-AC <AC>` (-AddCheck), sets Working directory empty in
-check record to start processing the check anywhere.
+used with :ref:`Action <section3>` :ref:`-AC <AC>` (-AddCheck), leaves the working
+directory empty in the check record so the command can run from any location.
 
 
 .. _BG:
@@ -22,8 +22,8 @@ check record to start processing the check anywhere.
 Mode Option -**BG** (-**BackGround**) (Alias: -**b**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-background process. When it is present,
-screen display is turned off for both standard output and errors.
+runs as a background process, suppressing
+all screen output and error messages.
 
 
 .. _CP:
@@ -31,8 +31,8 @@ screen display is turned off for both standard output and errors.
 Mode Option -**CP** (-**CheckPending**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-if present for :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck), checks and kills
-long pending checks.
+when used with :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck), checks and
+kills long-pending checks.
 
 
 .. _CS:
@@ -40,9 +40,9 @@ long pending checks.
 Mode Option -**CS** (-**CheckStatus**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-if present, displays detailed status information of the
-recorded commands, including progress percentage for a running command and
-error message for a failed command.
+displays detailed status information for recorded
+commands, including progress percentage for running commands and error
+messages for failed ones.
 
 
 .. _FI:
@@ -50,8 +50,8 @@ error message for a failed command.
 Mode Option -**FI** (-**ForceInterrrupt**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-if present, force interrupts a check that is still under
-processing; otherwise a warning message will display.
+required to interrupt a check that is currently being
+processed; without it, a warning message is displayed instead.
 
 
 .. _FO:
@@ -59,9 +59,8 @@ processing; otherwise a warning message will display.
 Mode Option -**FO** (-**FormatOutput**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-if present, formats column output results for get
-actions. A same width, evaluated dynamically, is applied for all values of a
-given field.
+formats column output for GET actions. A uniform width,
+evaluated dynamically, is applied to all values of a given field.
 
 
 .. _LO:
@@ -69,9 +68,8 @@ given field.
 Mode Option -**LO** (-**LogOn**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-turns detail logging on when **dscheck** starts
-in Daemon mode. The detail logging is off as default if this Mode option is
-not present.
+enables detailed logging when **dscheck**
+starts in daemon mode. Detailed logging is off by default.
 
 
 .. _MD:
@@ -79,8 +77,8 @@ not present.
 Mode Option -**MD** (-**MyDataset**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-allows a specialist to manipulate check information of
-a given dataset listed for another specialist.
+allows a specialist to access check information for a
+dataset owned by another specialist.
 
 
 .. _NC:
@@ -88,8 +86,8 @@ a given dataset listed for another specialist.
 Mode Option -**NC** (-**NoCommand**) (Alias: -**NoRemoteCommand**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-does not issue remote commands if
-this Mode option is present for action :ref:`-PC <PC>` (-ProcessCheck).
+suppresses remote command
+execution when used with :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck).
 
 
 .. _ND:
@@ -97,10 +95,9 @@ this Mode option is present for action :ref:`-PC <PC>` (-ProcessCheck).
 Mode Option -**ND** (-**NewDaemon**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-a new daemon control can only be added when this Mode option is
-present and daemon control index is given as 0 when :ref:`Action <section3>` :ref:`-SD <SD>` (-SetDaemon) of
-**dscheck** is executed. This Mode option blocks mistakes of adding daemon control
-records unintentionally.
+required to add a new daemon control record when :ref:`Action <section3>`
+:ref:`-SD <SD>` (-SetDaemon) is run with a daemon control index of 0. This flag prevents
+daemon control records from being added unintentionally.
 
 
 .. _NT:
@@ -108,8 +105,8 @@ records unintentionally.
 Mode Option -**NT** (-**NoTrim**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-skips trimming of spaces and comments from input values to
-speed up reading input file(s).
+skips stripping spaces and comments from input values to
+speed up reading of input files.
 
 
 .. _WR:
@@ -117,8 +114,8 @@ speed up reading input file(s).
 Mode Option -**WR** (-**WithdsRqst**) (Alias: -**WithRequest**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-adds requests due to be built or purged of command `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_
-for **dscheck** :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) in non-daemon mode.
+adds `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ records due to be built or purged to check
+records, for use with :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) in non-daemon mode.
 
 
 .. _WU:
@@ -126,8 +123,8 @@ for **dscheck** :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) in non-
 Mode Option -**WU** (-**WithdsUpdt**) (Alias: -**WithUpdate**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-adds due update controls of command `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ for **dscheck**
-:ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) in non-daemon mode.
+adds due `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ update controls to check records, for
+use with :ref:`Action <section3>` :ref:`-PC <PC>` (-ProcessCheck) in non-daemon mode.
 
 
 

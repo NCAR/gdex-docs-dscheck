@@ -4,27 +4,24 @@
 3.1 - Daemon Control Actions
 =================================
 
-A daemon control record for a command, a specialist and a hostname is used to
-configure how many concurrent processes the specified command can be executed
-for the specialist on specified hostname, and the priority the hostname is
-picked to start the command. A running centralized daemon reads this record
-periodically in case the configuration is changed while the daemon is still
-running, so that specialists can reset the values in daemon control records to
-change the behavior of dscheck daemon dynamically without shutting the daemon down.
+A daemon control record configures how many concurrent processes of a given
+command a specialist may run on a specified host, and the priority order in
+which hosts are selected. The centralized daemon reads these records
+periodically, so specialists can update daemon control values at any time
+without restarting the daemon.
 
-Daemon control information can be created, modified and viewed via Actions
-included in this section:
+Daemon control records are managed with the following actions:
 
 .. list-table::
    :widths: auto
    :header-rows: 0
 
    * - :ref:`Set Daemon Control <section3.1.1>`
-     - create and modify daemon control information for specified specialists, commands and hostnames
+     - create or modify daemon control records for specified specialists, commands, and hostnames
    * - :ref:`Get Daemon Control <section3.1.2>`
-     - retrieve information of existing daemon controls
+     - retrieve existing daemon control information
    * - :ref:`Delete Daemon Control <section3.1.3>`
-     - delete one or multiple daemon control records
+     - remove one or more daemon control records
 
 .. toctree::
    :maxdepth: 1
