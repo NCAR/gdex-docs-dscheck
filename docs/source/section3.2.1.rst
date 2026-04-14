@@ -10,7 +10,7 @@
 Action Option -**AC** (-**AddCheck**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-adds check information for a delayed mode command execution.
+adds a check record for delayed command execution.
 
 | **dscheck** -(AC|AddCheck) [:ref:`Mode Option <mode3.2.1>`]
 |            :ref:`-(CM|Command) <CM>` CommandNames
@@ -29,33 +29,30 @@ adds check information for a delayed mode command execution.
 |           [:ref:`-(OF|OutputFile) <OF>` OutputFileName]
 |           [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.2.1:
-
-:ref:`Mode option <section4>` that can be specified for adding check control Action:
+Available mode option:
 
 .. list-table::
    :widths: auto
    :header-rows: 0
 
    * - :ref:`-(AW|AnyWhere) <AW>`
-     - sets Working directory empty in check record to start processing the check anywhere.
+     - leaves the working directory empty in the check record so the command can be processed from any location
 
-Command name is mandatory for adding a new check for delayed mode execution.
-Unless they are specified, the current specialist who adds the command is defaulted
-as the owner of the added check record, and the current path is defaulted as the
-working directory when the command is executed later.
+The command name is required. If not specified, the current specialist is
+set as the owner of the check record and the current directory is used as
+the working directory when the command runs later.
 
-Specify additional PBS batch options via :ref:`Info option <section5>` :ref:`-QS <QS>` (-QsubOptions) to add a check;
-and specify a parent check index to put the current command on hold until the parent
-check is finished.
+Pass additional PBS batch options via :ref:`-QS <QS>` (-QsubOptions). Use :ref:`-PI <PI>`
+(-ParentIndex) to put the current command on hold until a parent check
+finishes.
 
-Commands containing redirections and pipes are not supported for delayed mode.
-A simple shell script can be used to wrap a complicated command.
+Commands with redirections or pipes are not supported for delayed mode.
+Wrap complex commands in a simple shell script instead.
 
 
 .. _3.2.1_e3:
 
-**EXAMPLE 3. To list file names in the current directory with name containing 'test' by catching the standard output into a log and display it on screen:**
+**EXAMPLE 3. To list files containing 'test' in the current directory, capturing stdout to a log and displaying it on screen:**
 
 | **dscheck** :ref:`-AC <AC>` :ref:`-CM <CM>` test1.sh :ref:`-HN <HN>` PBS
 
@@ -68,7 +65,7 @@ Content of shell script test1.sh:
 
 .. _3.2.1_e4:
 
-**EXAMPLE 4. To list file names in the current directory with name containing 'test' by catching the standard output and error into separate log files:**
+**EXAMPLE 4. To list files containing 'test', capturing stdout and stderr to separate log files:**
 
 | **dscheck** :ref:`-AC <AC>` :ref:`-CM <CM>` test2.sh :ref:`-HN <HN>` PBS
 
@@ -81,11 +78,12 @@ Content of shell script test2.sh:
 
 .. _3.2.1_e5:
 
-**EXAMPLE 5. To add testing command 'test2' into 'dscheck' for delayed mode execution on PBS:**
+**EXAMPLE 5. To add command 'test3' to 'dscheck' for deferred execution on PBS:**
 
 | **dscheck** :ref:`-AC <AC>` :ref:`-CM <CM>` test3 :ref:`-HN <HN>` PBS
 
-The command 'test3' must be executable at the current working directory on PBS machines.
+The command 'test3' must be executable in the current working directory on
+PBS machines.
 
 
 

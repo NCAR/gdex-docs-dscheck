@@ -10,7 +10,7 @@
 Action Option -**GC** (-**GetCheck**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-gets check information recorded in GDEXDB.
+retrieves check information recorded in GDEXDB.
 
 | **dscheck** -(GC|GetCheck) [:ref:`Mode Options <mode3.2.2>`]
 |           [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
@@ -28,21 +28,19 @@ gets check information recorded in GDEXDB.
 |           [:ref:`-(OF|OutputFile) <OF>` OutputFileName]
 |           [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.2.2:
-
-:ref:`Mode options <section4>` that can be specified for getting check Action:
+Available mode options:
 
 .. list-table::
    :widths: auto
    :header-rows: 0
 
    * - :ref:`-(CS|CheckStatus) <CS>`
-     - check and show detail information on check status
+     - displays detailed check status, including progress percentage for running commands and error messages for failed ones
    * - :ref:`-(FO|FormatOutput) <FO>`
-     - format the column output with a fix width for all values of a given field
+     - formats each column to a uniform fixed width
 
-Use :ref:`Info option <section5>` :ref:`-FN <FN>` (-FieldNames) to specify what check fields to retrieve.
-It defaults to "COVTUPFJDNW" if :ref:`-FN <FN>` is not given.
+Use :ref:`-FN <FN>` (-FieldNames) to specify which check fields to retrieve.
+Defaults to "COVTUPFJDNW" when :ref:`-FN <FN>` is not given.
 
 Valid check field names and their corresponding :ref:`Info options <section5>`:
 
@@ -126,9 +124,8 @@ Valid check field names and their corresponding :ref:`Info options <section5>`:
      - :ref:`-(ER|ErrorMessage) <ER>`
      - error message from failed command
 
-Check information can be retrieved for specified check index per option
-:ref:`-CI <CI>` (-CheckIndex). Without any condition, the check records owned by the
-current specialist are retrieved.
+Filter results by check index via :ref:`-CI <CI>` (-CheckIndex). Without any condition,
+only check records owned by the current specialist are returned.
 
 
 

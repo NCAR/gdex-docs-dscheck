@@ -10,26 +10,24 @@
 Action Option -**IC** (-**InterruptCheck**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-interrupts checks whose commands are currently running
-and also kills recursively all the child processes running under those
-commands. Locks are cleaned too when the checks are interrupted.
+interrupts checks whose commands are currently
+running and recursively kills all child processes. Locks are released when
+the check is interrupted.
 
 | **dscheck** -(IC|InterruptCheck) [:ref:`Mode Option <mode3.3.2>`]
 |            :ref:`-(CI|CheckIndex) <CI>` CheckIndices
 |           [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-.. _mode3.3.2:
-
-:ref:`Mode option <section4>` that can be specified for this action:
+Available mode option:
 
 .. list-table::
    :widths: auto
    :header-rows: 0
 
    * - :ref:`-(FI|ForceInterrupt) <FI>`
-     - it must be present for this action to interrupt a check that is under processing.
+     - required to interrupt a check that is currently being processed
 
-It is mandatory to provide a check index to interrupt its command.
+A check index is required to interrupt its command.
 
 
 

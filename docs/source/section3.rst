@@ -4,11 +4,10 @@
 3 - ACTION OPTIONS
 =================================
 
-Action options are used to specify what task **dscheck** executes. No values
-are allowed to follow Action options. Multiple Action options provided
-simultaneously are blocked.
+Action options specify what task **dscheck** executes. They take no values.
+Specifying more than one Action option at a time is not allowed.
 
-Based on the information being manipulated, the actions are divided into three
+Based on the information being manipulated, actions are divided into four
 categories:
 
 .. list-table::
@@ -16,11 +15,11 @@ categories:
    :header-rows: 0
 
    * - :ref:`Daemon Control Actions <section3.1>`
-     - create, delete, modify and view daemon control information in GDEXDB, of specified specialist, command and hostname
+     - create, delete, modify and view daemon control information in GDEXDB, for specified specialists, commands, and hostnames
    * - :ref:`Check Actions <section3.2>`
-     - add, delete, unlock and view check information of the active individual checks
+     - add, delete, unlock and view check information for active individual checks
    * - :ref:`Check Process Actions <section3.3>`
-     - process checks by starting commands on remote hosts as configured in daemon controls and purge checks by recording the commands and their execution information into check history; interrupt the current executing commands by killing the current process and its all children; and email status of current checks
+     - process checks by starting commands on remote hosts as configured in daemon controls; purge checks by recording commands and execution results into check history; interrupt running commands by killing the current process and all its children; and email check status to a specialist
    * - :ref:`Daemon Host Connectivity <section3.4>`
      - check connectivity of daemon hosts for specialists
 
