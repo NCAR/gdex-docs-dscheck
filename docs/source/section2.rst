@@ -38,7 +38,6 @@ are accepted, and aliases are noted with each option.
    section2.1
    section2.2
    section2.3
-   section2.4
 
 
 
