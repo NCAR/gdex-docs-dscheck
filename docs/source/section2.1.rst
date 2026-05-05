@@ -16,7 +16,7 @@ Show the description of a single option:
 .. list-table::
    :widths: auto
    :header-rows: 1
- dscheck -h :ref:`-AC <AC>` dscheck :ref:`-AC <AC>` -h
+ dscheck -h :ref:`-AC <AC>`
 
 List your own daemon control records:
 
