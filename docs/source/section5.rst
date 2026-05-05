@@ -11,9 +11,9 @@ Info options pass data values into **dscheck**. They come in two forms:
    :header-rows: 0
 
    * - :ref:`Single-Value Info Options <section5.1>`
-     - accept exactly one value per invocation
+     - accept exactly one value.
    * - :ref:`Multi-Value Info Options <section5.2>`
-     - accept one or more values per invocation
+     - accept one or more values, comma-separated on the command line or row-separated in an input file.
 
 .. toctree::
    :maxdepth: 2

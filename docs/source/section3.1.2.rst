@@ -10,9 +10,8 @@
 Action Option -**GD** (-**GetDaemon**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-retrieves daemon control records for specified commands,
-specialists, or hostnames. If no conditions are provided, only records owned
-by the specialist running **dscheck** are returned.
+retrieves daemon control records. With no :ref:`Info <section5>`-option
+filters, only records owned by the current specialist are returned.
 
 | **dscheck** -(GD|GetDaemon) [:ref:`Mode Option <mode3.1.2>`]
 |           [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
@@ -32,54 +31,53 @@ Available mode option:
    :header-rows: 0
 
    * - :ref:`-(FO|FormatOutput) <FO>`
-     - formats each column to a uniform fixed width
+     - pad each column to a uniform width for readability.
 
-Use :ref:`-FN <FN>` (-FieldNames) to specify which daemon control fields to retrieve.
-Defaults to all available fields when :ref:`-FN <FN>` is not provided.
+:ref:`-FN <FN>` (-FieldNames) selects which daemon-control fields to retrieve as a
+string of single-letter codes. When :ref:`-FN <FN>` is omitted, all fields are
+returned.
 
-Valid daemon control field names and their corresponding :ref:`Info options <section5>`:
+Field codes for daemon control records:
 
 .. list-table::
    :widths: auto
    :header-rows: 1
 
-   * - Names
-     - :ref:`Info Options <section5>`
-     - Descriptions
+   * - Code
+     - :ref:`Info Option <section5>`
+     - Description
    * - I
      - :ref:`-(DI|DaemonIndex) <DI>`
      - daemon control index
    * - C
      - :ref:`-(CM|Command) <CM>`
-     - command names of utility programs
+     - command name of a utility program
    * - H
      - :ref:`-(HN|Hostname) <HN>`
      - computer hostname
    * - M
      - :ref:`-(MH|MatchHost) <MH>`
-     - Flags to control hostname match
+     - flag controlling hostname match
    * - S
      - :ref:`-(SN|Specialist) <SN>`
-     - DECS specialist the daemon set for
+     - DECS specialist this control applies to
    * - P
      - :ref:`-(PL|ProcessLimit) <PL>`
-     - Max check count to be processed at the same times
+     - max concurrent processes for this control
    * - O
      - :ref:`-(PO|Priority) <PO>`
-     - host priority a specified command to start on
+     - host priority within this control
 
-Results can be filtered by specialist (:ref:`-SN <SN>`), and/or other conditions.
-Options :ref:`-SN <SN>`, :ref:`-CM <CM>`, and :ref:`-HN <HN>` accept the '%' wildcard.
+:ref:`-SN <SN>`, :ref:`-CM <CM>`, and :ref:`-HN <HN>` accept the SQL-style '%' wildcard. Pass :ref:`-SN <SN>` ALL to
+retrieve every specialist's records (or a specific other specialist by
+login name).
 
-To view records owned by another specialist, provide their login name via
-:ref:`-SN <SN>` (-Specialist). To view all control records, use :ref:`-SN <SN>` ALL.
+Example - retrieve all daemon control records owned by you:
 
-
-.. _3.1.2_e2:
-
-**EXAMPLE 2. To retrieve all daemon control records set for you:**
-
-dscheck GD
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+ dscheck :ref:`-GD <GD>`
 
 
 

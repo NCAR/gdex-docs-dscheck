@@ -10,19 +10,19 @@
 Action Option -**UL** (-**UnLockCheck**) (Alias: -**UnLock**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-unlocks check records whose commands
-aborted abnormally during processing.
+clears stale lock information from
+a check record.
 
-When a command is running, its process ID and hostname are saved in the
-check record. If the process aborts abnormally, this lock information may
-not be cleared properly. Use this action to remove the lock so the command
-can be reprocessed or purged.
+When a check is being processed, the running process ID and hostname are
+written into the check record. If the process aborts abnormally, that
+lock may not be cleared. Unlocking a check allows it to be reprocessed
+or purged.
 
 | **dscheck** -(UL|UnLockCheck)
 |            :ref:`-(CI|CheckIndex) <CI>` CheckIndices
 |           [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-A check index is required to unlock a recorded command.
+:ref:`-CI <CI>` is required.
 
 
 

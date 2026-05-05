@@ -10,8 +10,9 @@
 Action Option -**EC** (-**EmailCheck**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-sends an email to a specialist with the current status
-of all their check records, unless more specific conditions are provided.
+emails a specialist a status report for their check
+records. With no filters, the report covers all of the recipient's
+active checks; otherwise it is restricted to the records that match.
 
 | **dscheck** -(EC|EmailCheck)
 |           [:ref:`-(CI|CheckIndex) <CI>` CheckIndices]
@@ -25,7 +26,7 @@ of all their check records, unless more specific conditions are provided.
 |           [:ref:`-(CC|CarbonCopy) <CC>` Cc'dEmailAddresses]
 |           [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-Any error messages recorded in the check record are included in the email.
+Any error messages stored on a failed check are included in the email.
 
 
 

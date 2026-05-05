@@ -10,7 +10,8 @@
 Action Option -**AC** (-**AddCheck**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-adds a check record for delayed command execution.
+adds a check record so that a command runs later,
+driven by the dscheck daemon (or by an explicit :ref:`-PC <PC>` invocation).
 
 | **dscheck** -(AC|AddCheck) [:ref:`Mode Option <mode3.2.1>`]
 |            :ref:`-(CM|Command) <CM>` CommandNames
@@ -36,54 +37,61 @@ Available mode option:
    :header-rows: 0
 
    * - :ref:`-(AW|AnyWhere) <AW>`
-     - leaves the working directory empty in the check record so the command can be processed from any location
+     - leave the working directory empty in the check record so the command may run from any location.
 
-The command name is required. If not specified, the current specialist is
-set as the owner of the check record and the current directory is used as
-the working directory when the command runs later.
+Defaults:
 
-Pass additional PBS batch options via :ref:`-QS <QS>` (-QsubOptions). Use :ref:`-PI <PI>`
-(-ParentIndex) to put the current command on hold until a parent check
-finishes.
+.. list-table::
+   :widths: auto
+   :header-rows: 0
 
-Commands with redirections or pipes are not supported for delayed mode.
-Wrap complex commands in a simple shell script instead.
+   * - Owner
+     - the specialist running **dscheck**.
+   * - Working directory
+     - the current directory at the time of :ref:`-AC <AC>`.
+   * - Host
+     - none specified; daemon control governs placement.
 
+Use :ref:`-PI <PI>` (-ParentIndex) to make the new check wait for an existing parent
+check to finish before it can run. Use :ref:`-QS <QS>` to pass options through to
+qsub when the command will run as a PBS batch job.
 
-.. _3.2.1_e3:
+Limitations:
 
-**EXAMPLE 3. To list files containing 'test' in the current directory, capturing stdout to a log and displaying it on screen:**
+* Shell redirections and pipes (>, >>, |, <) are not supported in the deferred command line. Wrap such commands in a shell script and add the script.
 
-| **dscheck** :ref:`-AC <AC>` :ref:`-CM <CM>` test1.sh :ref:`-HN <HN>` PBS
+Examples:
 
-Content of shell script test1.sh:
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+ List files containing 'test' in the current directory, capture stdout to a log, and also display it on screen:
 
-.. code-block:: none
+| **dscheck** :ref:`-AC <AC>` -CM test1.sh :ref:`-HN <HN>` PBS
 
- (ls -l | grep test) | tee test1.out
+<<Content of shell script test1.sh>>
+(ls -l | grep test) | tee test1.out
 
+List files containing 'test', capturing stdout and stderr to separate
+log files:
 
-.. _3.2.1_e4:
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+ dscheck :ref:`-AC <AC>` -CM test2.sh :ref:`-HN <HN>` PBS
 
-**EXAMPLE 4. To list files containing 'test', capturing stdout and stderr to separate log files:**
+<<Content of shell script test2.sh>>
+(ls -l | grep test) 1> test2.out 2>test2.err
 
-| **dscheck** :ref:`-AC <AC>` :ref:`-CM <CM>` test2.sh :ref:`-HN <HN>` PBS
+Add the executable 'test3' for deferred execution on PBS:
 
-Content of shell script test2.sh:
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+ dscheck :ref:`-AC <AC>` -CM test3 :ref:`-HN <HN>` PBS
 
-.. code-block:: none
-
- (ls -l | grep test) 1> test2.out 2>test2.err
-
-
-.. _3.2.1_e5:
-
-**EXAMPLE 5. To add command 'test3' to 'dscheck' for deferred execution on PBS:**
-
-| **dscheck** :ref:`-AC <AC>` :ref:`-CM <CM>` test3 :ref:`-HN <HN>` PBS
-
-The command 'test3' must be executable in the current working directory on
-PBS machines.
+The command 'test3' must be executable from the working directory on
+the PBS machine.
 
 
 

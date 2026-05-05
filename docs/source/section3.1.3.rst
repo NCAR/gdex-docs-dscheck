@@ -10,15 +10,14 @@
 Action Option -**DL** (-**Delete**) (Aliases: -**RM**, -**Remove**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-removes one or more **dscheck** records from GDEXDB for
-the specified check indices.
+removes check records from GDEXDB by check index.
 
 | **dscheck** :ref:`-(DL|Delete) <DL>`
 |           :ref:`-(CI|CheckIndex) <CI>` CheckIndices
 |          [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
-A deleted check record is saved to check history and can be viewed later
-via the utility program **viewcheckusage**.
+A deleted check is moved to check history and remains visible via the
+utility program **viewcheckusage**.
 
 
 
