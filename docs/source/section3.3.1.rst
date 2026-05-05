@@ -10,8 +10,8 @@
 Action Option -**PC** (-**ProcessCheck**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-starts commands from check records in daemon or
-non-daemon mode. Check indices may be specified in non-daemon mode.
+drives command execution from check records, in
+either daemon mode or non-daemon mode.
 
 | **dscheck** -(PC|ProcessCheck) [:ref:`Mode Options <mode3.3.1>`]
 |           [:ref:`-(CI|CheckIndex) <CI>` CheckIndices]
@@ -28,28 +28,31 @@ Available mode options:
    :header-rows: 0
 
    * - :ref:`-(BG|BackGround) <BG>`
-     - runs as a background process, suppressing screen output and errors
+     - run as a background process; suppress screen output.
    * - :ref:`-(CP|CheckPending) <CP>`
-     - checks and kills long-pending checks
+     - identify and kill long-pending checks.
    * - :ref:`-(LO|LogOn) <LO>`
-     - enables detailed logging in daemon mode
+     - enable detailed logging in daemon mode.
    * - :ref:`-(NC|NoCommand) <NC>`
-     - suppresses remote command execution
+     - do not actually execute remote commands (dry run).
    * - :ref:`-(WU|WithdsUpdt) <WU>`
-     - in non-daemon mode, adds check records for due `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ actions configured in update control records
+     - in non-daemon mode, add check records for due `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ actions configured in update controls.
    * - :ref:`-(WR|WithdsRqst) <WR>`
-     - in non-daemon mode, adds check records for `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ records due to be built or purged
+     - in non-daemon mode, add check records for `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ records due to be built or purged.
 
-In daemon mode, **dscheck** sleeps for two minutes (120 seconds by default,
-or as configured via :ref:`-WI <WI>`) between processing cycles. On each wake-up, it
-first adds due `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ and `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ check records, then starts or restarts
-commands from check records according to the host priorities set in daemon
-controls.
+Daemon mode (:ref:`-DM <DM>` start):
 
-In non-daemon mode, :ref:`Mode options <section4>` :ref:`-WU <WU>` and :ref:`-WR <WR>` must be present for due
-`dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ and `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ actions to be added to check records. All current
-check records (unless indices are specified) are then processed on machines
-according to the daemon control configuration.
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+ The daemon sleeps for :ref:`-WI <WI>` seconds (default 120) between cycles. Each cycle, it adds due `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ and `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ check records, then starts or restarts checks on hosts chosen by daemon control priorities. :ref:`-DM <DM>` stop, :ref:`-DM <DM>` logon, and :ref:`-DM <DM>` logoff stop the daemon, enable detailed logging, and disable detailed logging respectively.
+
+Non-daemon mode:
+
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+ Without :ref:`-DM <DM>`, dscheck processes the current set of check records once. :ref:`-WU <WU>` and :ref:`-WR <WR>` must be set explicitly if you want due 'dsupdt'/'dsrqst' work to be added before processing. :ref:`-CI <CI>` restricts processing to specific check indices.
 
 
 

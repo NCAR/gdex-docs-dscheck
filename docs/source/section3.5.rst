@@ -10,8 +10,10 @@
 Action Option -**SO** (-**SetOptions**) (Alias: -**SetBatchOptions**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-processes batch options with
-a leading '!' to build options dynamically.
+evaluates batch options
+whose values begin with '!' so that PBS options can be assembled
+dynamically (for example, by resolving environment- or workload-derived
+values at submission time).
 
 | **dscheck** -(SO|SetOptions)
 |           [:ref:`-(HN|HostName) <HN>` HostNames]

@@ -10,7 +10,8 @@
 Action Option -**CH** (-**CheckHost**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-checks connectivity of daemon hosts for specialists.
+verifies that the hosts referenced in daemon control
+records are reachable from the current host for the given specialist.
 
 | **dscheck** -(CH|CheckHost)
 |           [:ref:`-(DI|DaemonIndex) <DI>` controlIndices]

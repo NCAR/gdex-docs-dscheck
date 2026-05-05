@@ -4,22 +4,24 @@
 3.2 - Check Actions
 =================================
 
-Delayed command executions for due `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ and `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ actions are recorded
-automatically. Other commands — including `dsarch <https://gdex-docs-dsarch.readthedocs.io>`_ and specialist-defined ones
-— can be added to **dscheck** manually. The following actions manage check records:
+Check records are created automatically by the dscheck daemon for due
+`dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ and `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ actions. Other commands - including `dsarch <https://gdex-docs-dsarch.readthedocs.io>`_ calls
+and any specialist-defined script - are added manually with :ref:`-AC <AC>`.
+
+Available actions:
 
 .. list-table::
    :widths: auto
    :header-rows: 0
 
    * - :ref:`Add Check <section3.2.1>`
-     - add a new check record for a deferred command
+     - add a check record for a deferred command.
    * - :ref:`Get Check <section3.2.2>`
-     - retrieve command information from check records
+     - retrieve check records and field values.
    * - :ref:`Delete Check <section3.2.3>`
-     - delete check records for commands that no longer need processing
+     - delete check records that should no longer run.
    * - :ref:`Unlock Check <section3.2.4>`
-     - unlock a check record whose command aborted without releasing the lock
+     - clear leftover lock information after an abnormal exit.
 
 .. toctree::
    :maxdepth: 1
@@ -29,12 +31,6 @@ automatically. Other commands — including `dsarch <https://gdex-docs-dsarch.re
    section3.2.2
    section3.2.3
    section3.2.4
-
-**Appendix A: List of Examples**
-
-- :ref:`A.3. Action Option -AC (-AddCheck) <3.2.1_e3>`
-- :ref:`A.4. Action Option -AC (-AddCheck) <3.2.1_e4>`
-- :ref:`A.5. Action Option -AC (-AddCheck) <3.2.1_e5>`
 
 
 

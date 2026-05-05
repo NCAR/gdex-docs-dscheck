@@ -4,24 +4,26 @@
 3 - ACTION OPTIONS
 =================================
 
-Action options specify what task **dscheck** executes. They take no values.
-Specifying more than one Action option at a time is not allowed.
+An Action option selects what **dscheck** does. Action options take no
+values, and exactly one Action option may be supplied per invocation.
 
-Based on the information being manipulated, actions are divided into four
-categories:
+Action options are grouped into four categories:
 
 .. list-table::
    :widths: auto
    :header-rows: 0
 
    * - :ref:`Daemon Control Actions <section3.1>`
-     - create, delete, modify and view daemon control information in GDEXDB, for specified specialists, commands, and hostnames
+     - create, modify, view, and delete daemon control records that govern how, where, and how concurrently commands run.
    * - :ref:`Check Actions <section3.2>`
-     - add, delete, unlock and view check information for active individual checks
+     - add, view, delete, and unlock individual check records.
    * - :ref:`Check Process Actions <section3.3>`
-     - process checks by starting commands on remote hosts as configured in daemon controls; purge checks by recording commands and execution results into check history; interrupt running commands by killing the current process and all its children; and email check status to a specialist
+     - start commands from check records, interrupt running commands, or email check status.
    * - :ref:`Daemon Host Connectivity <section3.4>`
-     - check connectivity of daemon hosts for specialists
+     - verify that daemon hosts are reachable for a specialist.
+
+A fifth, narrower action :ref:`-SO <SO>` (-SetOptions) builds batch options dynamically
+and is documented in Section 3.5.
 
 .. toctree::
    :maxdepth: 2
@@ -32,14 +34,6 @@ categories:
    section3.3
    section3.4
    section3.5
-
-**Appendix A: List of Examples**
-
-- :ref:`A.1. Action Option -SD (-SetDaemon) <3.1.1_e1>`
-- :ref:`A.2. Action Option -GD (-GetDaemon) <3.1.2_e2>`
-- :ref:`A.3. Action Option -AC (-AddCheck) <3.2.1_e3>`
-- :ref:`A.4. Action Option -AC (-AddCheck) <3.2.1_e4>`
-- :ref:`A.5. Action Option -AC (-AddCheck) <3.2.1_e5>`
 
 
 

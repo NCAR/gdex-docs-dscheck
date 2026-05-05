@@ -10,7 +10,8 @@
 Action Option -**GC** (-**GetCheck**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-retrieves check information recorded in GDEXDB.
+retrieves check records from GDEXDB. With no filter,
+returns active check records owned by the current specialist.
 
 | **dscheck** -(GC|GetCheck) [:ref:`Mode Options <mode3.2.2>`]
 |           [:ref:`-(FN|FieldNames) <FN>` FieldNameString]
@@ -35,22 +36,23 @@ Available mode options:
    :header-rows: 0
 
    * - :ref:`-(CS|CheckStatus) <CS>`
-     - displays detailed check status, including progress percentage for running commands and error messages for failed ones
+     - include detailed status: progress percentage for running commands and error messages for failed ones.
    * - :ref:`-(FO|FormatOutput) <FO>`
-     - formats each column to a uniform fixed width
+     - pad each column to a uniform width for readability.
 
-Use :ref:`-FN <FN>` (-FieldNames) to specify which check fields to retrieve.
-Defaults to "COVTUPFJDNW" when :ref:`-FN <FN>` is not given.
+:ref:`-FN <FN>` (-FieldNames) selects which fields to retrieve as a string of
+single-letter codes. When :ref:`-FN <FN>` is omitted, the default field set is
+"COVTUPFJDNW".
 
-Valid check field names and their corresponding :ref:`Info options <section5>`:
+Field codes for check records:
 
 .. list-table::
    :widths: auto
    :header-rows: 1
 
-   * - Names
-     - :ref:`Info Options <section5>`
-     - Descriptions
+   * - Code
+     - :ref:`Info Option <section5>`
+     - Description
    * - C
      - :ref:`-(CI|CheckIndex) <CI>`
      - check index
@@ -59,73 +61,73 @@ Valid check field names and their corresponding :ref:`Info options <section5>`:
      - original command name
    * - V
      - :ref:`-(AV|ArgumentVector) <AV>`
-     - argument line following command, up to 100 chars
+     - argument string after the command (<= 100 chars)
    * - T
      - :ref:`-(DS|Dataset) <DS>`
-     - dataset ID, the original command run against
+     - dataset ID the command runs against
    * - A
      - :ref:`-(AN|ActionName) <AN>`
-     - action name for a given command
+     - action name for the command
    * - U
      - :ref:`-(ST|Status) <ST>`
-     - check status for a recorded command
+     - check status for the recorded command
    * - B
      - :ref:`-(DF|DownFlags) <DF>`
-     - Storage system down flags: D-DRDATA,G-GLADE,O-ObjectStore
+     - storage down flags: D-DRDATA, G-GLADE, O-ObjectStore
    * - P
      - :ref:`-(PQ|PBSQueue) <PQ>`
-     - PBS batch queue name: gdex or htc
+     - PBS batch queue name (e.g. gdex, htc)
    * - R
      - :ref:`-(PI|ParentIndex) <PI>`
-     - parent check index the current one to wait on
+     - parent check index this check waits on
    * - F
      - :ref:`-(FC|FileCount) <FC>`
-     - number of files need to be processed
+     - number of files to be processed
    * - J
      - :ref:`-(DC|DoneCount) <DC>`
-     - number of files are processed already
+     - number of files already processed
    * - K
      - :ref:`-(TC|TryCount) <TC>`
-     - number of tries the command is executed
+     - number of times the command has run
    * - L
      - :ref:`-(MC|MaxCount) <MC>`
-     - upper limit for number of command tries
+     - maximum number of tries allowed
    * - Z
      - :ref:`-(SZ|DataSize) <SZ>`
-     - total bytes of data processed for the command
+     - total bytes processed for the command
    * - D
      - :ref:`-(CD|CheckDate) <CD>`
-     - date the command is initially recorded
+     - date the command was first recorded
    * - Y
      - :ref:`-(CT|CheckTime) <CT>`
-     - time the command is initially recorded
+     - time the command was first recorded
    * - H
      - :ref:`-(HN|HostName) <HN>`
-     - host names the command can or cannot run on
+     - host(s) the command can or cannot run on
    * - N
      - :ref:`-(SN|Specialist) <SN>`
-     - specialist login name who starts the command
+     - specialist who owns the check
    * - W
      - :ref:`-(WD|WorkDir) <WD>`
-     - working directory where the command is started
+     - working directory for the command
    * - M
      - :ref:`-(MO|Modules) <MO>`
-     - include modules to load to batch job script
+     - modules to load in the batch job script
    * - I
      - :ref:`-(EV|Environments) <EV>`
-     - include environment variables to load to batch job script
+     - environment variables for the batch job
    * - Q
      - :ref:`-(QS|QsubOptions) <QS>`
-     - additional PBS batch options for qsub
+     - additional qsub options
    * - X
      - :ref:`-(AX|ArgumentExtra) <AX>`
-     - additional argument line beyond 100 characters
+     - additional argument string beyond 100 chars
    * - E
      - :ref:`-(ER|ErrorMessage) <ER>`
-     - error message from failed command
+     - error message from a failed command
 
-Filter results by check index via :ref:`-CI <CI>` (-CheckIndex). Without any condition,
-only check records owned by the current specialist are returned.
+Use :ref:`-CI <CI>` (-CheckIndex) to fetch specific records. To inspect another
+specialist's records, supply :ref:`-SN <SN>` with the appropriate login name.
 
 
 

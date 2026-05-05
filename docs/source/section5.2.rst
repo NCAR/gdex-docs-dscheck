@@ -5,7 +5,7 @@
 =================================
 
 A multi-value Info option accepts a list of one or more values. Supplying
-zero values causes an error.
+zero values is an error.
 
 
 .. _AN:
@@ -13,8 +13,8 @@ zero values causes an error.
 Info Option -**AN** (-**ActionName**) (Alias: -**Action**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the action name associated with a given
-command recorded in a check record.
+the action name associated with
+a command in a check record.
 
 
 .. _AV:
@@ -22,9 +22,9 @@ command recorded in a check record.
 Info Option -**AV** (-**ArgumentVector**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the space-delimited argument string following the
-command, up to 100 characters. Quote individual arguments containing spaces
-with single quotes.
+the space-delimited argument string that
+follows the command, up to 100 characters. Quote individual arguments
+containing spaces with single quotes.
 
 
 .. _AX:
@@ -33,7 +33,8 @@ Info Option -**AX** (-**ArgumenteXtra**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 the space-delimited argument string beyond 100
-characters. Non-empty only when the argument vector exceeds 100 characters.
+characters. Non-empty only when the argument vector exceeds 100
+characters.
 
 
 .. _CC:
@@ -41,9 +42,9 @@ characters. Non-empty only when the argument vector exceeds 100 characters.
 Info Option -**CC** (-**CarbonCopy**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-one or more additional email addresses for Cc'd
-notification of check status. For DECS specialists, login names are
-acceptable; for other domains, full email addresses are required.
+additional email addresses for Cc'd notification
+of check status. DECS specialists may be specified by login name; for
+other domains, use full email addresses.
 
 
 .. _CD:
@@ -51,7 +52,7 @@ acceptable; for other domains, full email addresses are required.
 Info Option -**CD** (-**CheckDate**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the date the recorded command was first processed.
+the date a recorded command was first processed.
 
 
 .. _CI:
@@ -59,8 +60,8 @@ the date the recorded command was first processed.
 Info Option -**CI** (-**CheckIndex**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the check record indices for commands recorded in GDEXDB.
-A check record is automatically purged when the command finishes.
+the indices of check records in GDEXDB. A check
+record is moved to history once its command finishes.
 
 
 .. _CM:
@@ -68,7 +69,7 @@ A check record is automatically purged when the command finishes.
 Info Option -**CM** (-**Command**) (Alias: -**CommandName**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the command name recorded in a check
+the command name in a check
 record.
 
 
@@ -77,7 +78,7 @@ record.
 Info Option -**CT** (-**CheckTime**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the time the recorded command was first processed.
+the time a recorded command was first processed.
 
 
 .. _DB:
@@ -85,10 +86,12 @@ the time the recorded command was first processed.
 Info Option -**DB** (-**Debug**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-enables debug logging. Up to 3 values may be given: debug
-level (required), log file path, and log file name. The level can be a
-single integer (e.g., 1000 means levels 1 to 1000) or a range (e.g.,
-200-1000). Defaults: log path '${DSSHOME}/dssdb/log', file name 'mydss.dbg'.
+enable debug logging. Up to three values may be given:
+
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+ the debug level (required), the log file path, and the log file name. The level is either a single integer (e.g. 1000 means levels 1 to 1000) or a range (e.g. 200-1000). Defaults: log path '${DSSHOME}/dssdb/log', file name 'mydss.dbg'.
 
 
 .. _DC:
@@ -104,8 +107,8 @@ the number of files successfully processed so far.
 Info Option -**DF** (-**DownFlags**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-storage system down flags. Supported values: D-DRDATA,
-G-GLADE, O-ObjectStore. Up to 5 flags may be combined.
+storage system down flags. Valid flags: D-DRDATA,
+G-GLADE, O-ObjectStore. Up to five flags may be combined.
 
 
 .. _DI:
@@ -113,9 +116,9 @@ G-GLADE, O-ObjectStore. Up to 5 flags may be combined.
 Info Option -**DI** (-**DaemonIndex**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-daemon control indices. A daemon control record holds
-the configuration for how many processes of a given command a specialist may
-run on a given host, and at what priority.
+daemon control indices. A daemon control record
+defines how many concurrent processes of a given command a specialist
+may run on a given host, and at what priority.
 
 
 .. _DS:
@@ -123,8 +126,12 @@ run on a given host, and at what priority.
 Info Option -**DS** (-**Dataset**) (Aliases: -**Dsid**, -**DatasetID**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-dataset numbers (also called dataset IDs), in the format
-[a-z]NNNNNN.
+dataset numbers (also called dataset IDs). Format:
+
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+ [a-z]NNNNNN.
 
 
 .. _ER:
@@ -140,9 +147,9 @@ the error message from a failed check command.
 Info Option -**EV** (-**Environments**) (Alias: -**Envs**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-environment variables required to
-execute a command as a batch job, in the form VarName=VarValue and separated
-by commas. These variables are set in the batch startup script.
+environment variables required
+to run a command as a batch job, in the form VarName=VarValue, separated
+by commas. The variables are set in the batch startup script.
 
 
 .. _FC:
@@ -150,7 +157,8 @@ by commas. These variables are set in the batch startup script.
 Info Option -**FC** (-**FileCount**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the number of files to be processed by a check command.
+the number of files to be processed by a check
+command.
 
 
 .. _HN:
@@ -158,7 +166,7 @@ the number of files to be processed by a check command.
 Info Option -**HN** (-**HostName**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the host names on which the check can or cannot be
+host names on which the check can or cannot be
 processed.
 
 
@@ -167,18 +175,19 @@ processed.
 Info Option -**IF** (-**InputFile**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-one or more input file names provided on the command line.
-Input files hold options and their values for a **dscheck** execution.
+one or more input file names supplied on the command
+line. An input file holds options and their values for a dscheck
+invocation.
 
-In an input file:
+Input file format:
 
-* Lines beginning with '#' are comments and are ignored.
-* Option names may be given in short, long, or alias form.
-* :ref:`Action <section3>`/Mode options: OptionName<!>  (marker changeable via -AO)
-* Single-value assignments: OptionName<=>OptionValue, one per line (delimiter changeable via -ES; default '<=>')
-* Multi-value (tabular) assignments: a title row followed by data rows, with columns separated by '<:>' (changeable via -DV).
-* Tabular data ends at EOF or when a new title line or single-value assignment is encountered.
-* If the last column contains multi-line text, append the separator to every row (including the title line).
+* Lines starting with '#' are comments and are ignored.
+* Option names may appear in short, long, or alias form.
+* :ref:`Action <section3>`/Mode markers:           OptionName<!> (marker overridable via :ref:`-AO <AO>`)
+* Single-value assignments:      OptionName<=>OptionValue (one per line; '<=>' overridable via -ES)
+* Multi-value tabular assignments: a title row followed by data rows, columns separated by '<:>' ('<:>' overridable via -DV).
+* A tabular block ends at EOF, at the next title line, or at the next single-value assignment.
+* If the last column of a tabular block contains multi-line text, append the column separator to every row, including the title row.
 
 
 .. _MC:
@@ -186,8 +195,8 @@ In an input file:
 Info Option -**MC** (-**MaxCount**) (Aliases: -**MaximumCount**, -**MaxTryCount**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the maximum number of times a failed check command may be
-retried.
+the maximum number of times a failed check command
+may be retried.
 
 
 .. _MH:
@@ -196,9 +205,9 @@ Info Option -**MH** (-**MatchHost**) (Alias: -**MatchHostname**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 controls how hostnames are
-matched: 'G' (general match — includes empty hostname or exclusive hostname
-lists where the current host is not listed) or 'M' (exact match — only
-the specified hostname).
+matched. 'G' is a general match - it includes empty hostnames and
+exclusive lists where the current host is not listed. 'M' is an exact
+match against the specified hostname.
 
 
 .. _MO:
@@ -206,8 +215,8 @@ the specified hostname).
 Info Option -**MO** (-**Modules**) (Alias: -**Mods**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-module names, separated by commas, needed
-to execute a command as a batch job. These modules are loaded in the batch
+comma-separated module names required
+to run a command as a batch job. The modules are loaded in the batch
 startup script.
 
 
@@ -216,8 +225,8 @@ startup script.
 Info Option -**PI** (-**ParentIndex**) (Alias: -**ParentCheckIndex**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the parent check index that the current check must wait
-for before it can run.
+the parent check index that the current check
+must wait for before it can run.
 
 
 .. _PO:
@@ -225,8 +234,8 @@ for before it can run.
 Info Option -**PO** (-**Priority**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the priority of a given host, determining the order in
-which hosts are selected to start a **dscheck** process.
+the priority of a host within a daemon control,
+determining the order in which hosts are tried when starting a check.
 
 
 .. _PL:
@@ -234,9 +243,9 @@ which hosts are selected to start a **dscheck** process.
 Info Option -**PL** (-**ProcessLimit**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the maximum number of concurrent processes that can be
-started for a given command and specialist on a specified host. Also used with
-:ref:`Action <section3>` :ref:`-SO <SO>` (-SetOptions) to limit concurrent cron processes.
+the maximum number of concurrent processes
+allowed for a given (command, specialist) on a given host. Also used
+with :ref:`-SO <SO>` (-SetOptions) to bound concurrent cron processes.
 
 
 .. _PQ:
@@ -244,7 +253,8 @@ started for a given command and specialist on a specified host. Also used with
 Info Option -**PQ** (-**PBSQueue**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the PBS batch queue to which the current check is submitted.
+the PBS batch queue to which the current check is
+submitted.
 
 
 .. _QS:
@@ -252,9 +262,9 @@ the PBS batch queue to which the current check is submitted.
 Info Option -**QS** (-**QSubOptions**) (Alias: -**PBSOptions**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-options passed to qsub when running
-a command as a PBS batch job. Quote the value on the command line, e.g.,
-:ref:`-QS <QS>` '-l walltime=12:00:00'.
+options passed to qsub when
+the command runs as a PBS batch job. Quote the value on the command
+line, e.g. :ref:`-QS <QS>` '-l walltime=12:00:00'.
 
 
 .. _SN:
@@ -262,8 +272,9 @@ a command as a PBS batch job. Quote the value on the command line, e.g.,
 Info Option -**SN** (-**Specialist**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the specialist who ran the original command. Used with
-:ref:`Action <section3>` :ref:`-GC <GC>` (-GetCheck) to view check records owned by a specific specialist.
+the specialist who originally ran the command.
+Used with :ref:`-GC <GC>` (-GetCheck) and :ref:`-GD <GD>` (-GetDaemon) to view records owned
+by a particular specialist.
 
 
 .. _ST:
@@ -271,8 +282,9 @@ the specialist who ran the original command. Used with
 Info Option -**ST** (-**Status**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the check status for a recorded command, including progress
-percentage for running commands and error messages for failed ones.
+the check status for a recorded command, including
+progress percentage for running commands and error messages for failed
+ones.
 
 
 .. _SZ:
@@ -280,7 +292,8 @@ percentage for running commands and error messages for failed ones.
 Info Option -**SZ** (-**DataSize**) (Aliases: -**Size**, -**ProcSize**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the total bytes of data processed for the check record.
+the total number of bytes processed for the check
+record.
 
 
 .. _TC:
@@ -288,8 +301,8 @@ the total bytes of data processed for the check record.
 Info Option -**TC** (-**TryCount**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the number of times the check command has been attempted,
-up to the limit set via :ref:`-MC <MC>`.
+the number of times the check command has been
+attempted, up to the limit set by :ref:`-MC <MC>`.
 
 
 .. _WD:
@@ -297,8 +310,8 @@ up to the limit set via :ref:`-MC <MC>`.
 Info Option -**WD** (-**WorkDir**) (Alias: -**WorkDirectory**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-the working directory from which
-the recorded command is started.
+the working directory from
+which the recorded command is started.
 
 
 
