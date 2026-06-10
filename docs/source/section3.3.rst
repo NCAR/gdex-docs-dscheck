@@ -4,7 +4,13 @@
 3.3 - Check Process Actions
 =================================
 
-The dscheck daemon starts and restarts deferred commands automatically.
+The dscheck driver starts and restarts deferred commands automatically.
+It can run either as a long-running daemon ('-PC :ref:`-DM <DM>` start'), or as a
+short-lived crontab invocation ('-PC' run every minute by cron). The
+driver may run as the specialist's own loginname, or as
+PGLOG['COMMONUSER'] (default 'gdexdata'); when run as COMMONUSER it
+also submits PBS jobs on behalf of every specialist in COMMONUSER's
+group that has a properly installed pgstart_<loginname> binary.
 Operators (and, in non-daemon mode, specialists) can also drive command
 execution from the command line, interrupt running commands, and email
 status summaries.

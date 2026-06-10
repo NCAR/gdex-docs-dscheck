@@ -16,12 +16,12 @@ The mental model has three layers:
    :widths: auto
    :header-rows: 0
 
-   * - 1. A check record
+   * - A check record
      - a row in GDEXDB that captures one deferred command: its name, arguments, owner, working directory, target host, retry policy, and current status.
-   * - 2. A daemon control
-     - a row in GDEXDB that tells the centralized **dscheck** daemon how many concurrent processes of a given command a given specialist may run on a given host, and at what host priority.
-   * - 3. The dscheck daemon
-     - a long-running process that wakes on a fixed interval, adds due 'dsupdt'/'dsrqst' check records, and starts (or restarts) commands from check records on hosts chosen according to daemon control configuration.
+   * - daemon/crontab control
+     - a row in GDEXDB that tells the centralized **dscheck** driver (whether running as a long-lived daemon or as a short-lived crontab invocation) how many concurrent processes of a given command a given specialist may run on a given host, and at what host priority.
+   * - The dscheck driver
+     - a process that wakes on a fixed interval, adds due 'dsupdt'/'dsrqst' check records, and starts (or restarts) commands from check records on hosts chosen according to daemon control configuration. The driver may run either as a long-running daemon ('-PC :ref:`-DM <DM>` start') or as a short-lived crontab invocation ('-PC' every minute via cron). It may run as the specialist's own loginname, or as PGLOG['COMMONUSER'] (default 'gdexdata'). When it runs as COMMONUSER it also submits PBS jobs (via qsub) on behalf of every specialist whose loginname belongs to the same group as COMMONUSER and who has a properly installed pgstart_<loginname> binary (see the rda_python_setuid README, '-p|--pgstart').
 
 Typical lifecycle of a deferred command:
 

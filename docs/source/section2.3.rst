@@ -8,16 +8,12 @@ Every option except :ref:`-IF <IF>` (-InputFile) may be supplied either on the c
 line or in an input file. :ref:`-IF <IF>` is itself only valid on the command line.
 A single dscheck invocation may combine command-line options with one or
 more input files. If the only options are inside a single input file, the
-:ref:`-IF <IF>` prefix may be omitted:
+:ref:`-IF <IF>` prefix may be omitted. See the description of :ref:`-IF <IF>` in Section 5.2 for
+the input-file format (comments, action/mode markers, single-value assignments,
+and tabular multi-value assignments, including delimiter overrides).
 
-.. list-table::
-   :widths: auto
-   :header-rows: 1
- dscheck mycheck.in
-
-See the description of :ref:`-IF <IF>` in Section 5.2 for the input-file format
-(comments, action/mode markers, single-value assignments, and tabular
-multi-value assignments, including delimiter overrides).
+A printable copy of this document is the file dscheck.usg installed under
+the python package rda_python_dscheck.
 
 
 

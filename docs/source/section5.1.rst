@@ -83,6 +83,17 @@ a string of single-letter field codes that
 controls the sort order of :ref:`-GC <GC>` (-GetCheck) output.
 
 
+.. _SH:
+
+Info Option -**SH** (-**SSHHostname**) :
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+used with :ref:`-SO <SO>` (-SetOptions): remote host name on
+which the dynamic-option command should run. When supplied, the command
+is invoked via 'ssh <hostname> ...' instead of locally. Defaults to
+running locally when omitted.
+
+
 .. _AO:
 
 Info Option -**AO** (-**ActOption**) :
@@ -98,7 +109,8 @@ Info Option -**WI** (-**WaitInterval**) :
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 the time the dscheck daemon sleeps between
-cycles. Defaults to 120 seconds (2 minutes).
+cycles. Defaults to 120 seconds (2 minutes). Ignored when :ref:`-PC <PC>` is
+driven from cron, since the cron schedule controls the cadence.
 
 
 
