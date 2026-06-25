@@ -29,6 +29,11 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pgrst -d ${{ github.workspace }}/docs/source -u dscheck/src/rda_python_dscheck/dscheck.usg -p dscheck/src/rda_python_dscheck/pg_check.py
 
+      - name: Sync version from rda-python-dscheck
+        run: |
+          ver=$(grep -m1 '^version' dscheck/pyproject.toml | sed -E 's/.*"(.*)".*/\1/')
+          sed -i -E "s/^version = \".*\"/version = \"$ver\"/" pyproject.toml
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
         with:

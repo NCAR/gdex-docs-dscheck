@@ -16,7 +16,7 @@ Show the description of a single option:
 .. list-table::
    :widths: auto
    :header-rows: 1
- dscheck -h :ref:`-AC <AC>` dscheck :ref:`-AC <AC>` -h
+ dscheck -h :ref:`-AC <AC>`
 
 List your own daemon control records:
 
@@ -46,12 +46,19 @@ Email yourself the status of all your active checks:
    :header-rows: 1
  dscheck :ref:`-EC <EC>`
 
-Start the dscheck daemon (typical for the operator):
+Start the dscheck driver as a long-running daemon (typical for the operator):
 
 .. list-table::
    :widths: auto
    :header-rows: 1
  dscheck :ref:`-PC <PC>` -DM start
+
+Or run the dscheck driver from crontab every minute (lightweight alternative):
+
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+ * * * * * dscheck :ref:`-PC <PC>`
 
 
 

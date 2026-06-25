@@ -21,6 +21,7 @@ values at submission time).
 |           [:ref:`-(MO|Modules) <MO>`  ModuleList]
 |           [:ref:`-(EV|Environments) <EV>`  EnvironmentPairList]
 |           [:ref:`-(QS|QsubOptions) <QS>`  PBSBatchOptions]
+|           [:ref:`-(SH|SSHHostname) <SH>` RemoteHostname]
 |           [:ref:`-(DB|Debug) <DB>` DebugModeInfo]
 
 

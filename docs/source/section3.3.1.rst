@@ -47,12 +47,26 @@ Daemon mode (:ref:`-DM <DM>` start):
    :header-rows: 1
  The daemon sleeps for :ref:`-WI <WI>` seconds (default 120) between cycles. Each cycle, it adds due `dsupdt <https://gdex-docs-dsupdt.readthedocs.io>`_ and `dsrqst <https://gdex-docs-dsrqst.readthedocs.io>`_ check records, then starts or restarts checks on hosts chosen by daemon control priorities. :ref:`-DM <DM>` stop, :ref:`-DM <DM>` logon, and :ref:`-DM <DM>` logoff stop the daemon, enable detailed logging, and disable detailed logging respectively.
 
-Non-daemon mode:
+Crontab mode (cron-driven, no :ref:`-DM <DM>`):
 
 .. list-table::
    :widths: auto
    :header-rows: 1
- Without :ref:`-DM <DM>`, dscheck processes the current set of check records once. :ref:`-WU <WU>` and :ref:`-WR <WR>` must be set explicitly if you want due 'dsupdt'/'dsrqst' work to be added before processing. :ref:`-CI <CI>` restricts processing to specific check indices.
+ The same :ref:`-PC <PC>` action can be driven from cron instead of running as a long-lived daemon. A typical setup is to run it every minute: * * * * * dscheck :ref:`-PC <PC>` Each invocation performs one cycle (add due 'dsupdt'/'dsrqst' work, then start/restart checks) and exits. :ref:`-WI <WI>` is ignored because the cron schedule controls the cadence.
+
+Non-daemon (one-shot) mode:
+
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+ Without :ref:`-DM <DM>` and not driven by cron, dscheck processes the current set of check records once. :ref:`-WU <WU>` and :ref:`-WR <WR>` must be set explicitly if you want due 'dsupdt'/'dsrqst' work to be added before processing. :ref:`-CI <CI>` restricts processing to specific check indices.
+
+Running user (daemon or crontab mode):
+
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+ The driver may run as the specialist's own loginname (handling only that specialist's checks), or as PGLOG['COMMONUSER'] (default 'gdexdata'). When run as COMMONUSER, it also submits PBS jobs (via qsub) on behalf of every specialist whose loginname is in the same group as COMMONUSER and who has a properly installed pgstart_<loginname> binary (see rda_python_setuid, option '-p|--pgstart').
 
 
 
