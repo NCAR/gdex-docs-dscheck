@@ -35,6 +35,10 @@ Available actions:
    section3.1.2
    section3.1.3
 
+**Appendix A: List of Examples**
+
+- :ref:`A.1. Action Option -GD (-GetDaemon) <3.1.2_e1>`
+
 
 
 | :ref:`Back to Top <section3.1>`

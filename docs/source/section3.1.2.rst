@@ -72,12 +72,12 @@ Field codes for daemon control records:
 retrieve every specialist's records (or a specific other specialist by
 login name).
 
-Example - retrieve all daemon control records owned by you:
 
-.. list-table::
-   :widths: auto
-   :header-rows: 1
- dscheck :ref:`-GD <GD>`
+.. _3.1.2_e1:
+
+**EXAMPLE 1. Retrieve all daemon control records owned by you:**
+
+| **dscheck** :ref:`-GD <GD>`
 
 
 
