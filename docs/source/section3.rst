@@ -35,6 +35,13 @@ and is documented in Section 3.5.
    section3.4
    section3.5
 
+**Appendix A: List of Examples**
+
+- :ref:`A.1. Action Option -GD (-GetDaemon) <3.1.2_e1>`
+- :ref:`A.2. Action Option -AC (-AddCheck) <3.2.1_e2>`
+- :ref:`A.3. Action Option -AC (-AddCheck) <3.2.1_e3>`
+- :ref:`A.4. Action Option -AC (-AddCheck) <3.2.1_e4>`
+
 
 
 | :ref:`Back to Top <section3>`

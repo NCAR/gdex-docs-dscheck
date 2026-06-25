@@ -32,6 +32,12 @@ Available actions:
    section3.2.3
    section3.2.4
 
+**Appendix A: List of Examples**
+
+- :ref:`A.2. Action Option -AC (-AddCheck) <3.2.1_e2>`
+- :ref:`A.3. Action Option -AC (-AddCheck) <3.2.1_e3>`
+- :ref:`A.4. Action Option -AC (-AddCheck) <3.2.1_e4>`
+
 
 
 | :ref:`Back to Top <section3.2>`

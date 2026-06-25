@@ -14,6 +14,7 @@ A GUIDE TO DSCHECK
    section3
    section4
    section5
+   appendixA
 
 
 

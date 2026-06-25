@@ -6,59 +6,51 @@
 
 Show the full document, paged through 'more':
 
-.. list-table::
-   :widths: auto
-   :header-rows: 1
- dscheck
+.. code-block:: none
+
+   dscheck
 
 Show the description of a single option:
 
-.. list-table::
-   :widths: auto
-   :header-rows: 1
- dscheck -h :ref:`-AC <AC>`
+.. code-block:: none
+
+   dscheck -h -AC
 
 List your own daemon control records:
 
-.. list-table::
-   :widths: auto
-   :header-rows: 1
- dscheck :ref:`-GD <GD>`
+.. code-block:: none
+
+   dscheck -GD
 
 List your own active check records:
 
-.. list-table::
-   :widths: auto
-   :header-rows: 1
- dscheck :ref:`-GC <GC>`
+.. code-block:: none
+
+   dscheck -GC
 
 Add a deferred run of a script on PBS:
 
-.. list-table::
-   :widths: auto
-   :header-rows: 1
- dscheck :ref:`-AC <AC>` -CM myscript.sh :ref:`-HN <HN>` PBS
+.. code-block:: none
+
+   dscheck -AC -CM myscript.sh -HN PBS
 
 Email yourself the status of all your active checks:
 
-.. list-table::
-   :widths: auto
-   :header-rows: 1
- dscheck :ref:`-EC <EC>`
+.. code-block:: none
+
+   dscheck -EC
 
 Start the dscheck driver as a long-running daemon (typical for the operator):
 
-.. list-table::
-   :widths: auto
-   :header-rows: 1
- dscheck :ref:`-PC <PC>` -DM start
+.. code-block:: none
+
+   dscheck -PC -DM start
 
 Or run the dscheck driver from crontab every minute (lightweight alternative):
 
-.. list-table::
-   :widths: auto
-   :header-rows: 1
- * * * * * dscheck :ref:`-PC <PC>`
+.. code-block:: none
+
+   * * * * * dscheck -PC
 
 
 
